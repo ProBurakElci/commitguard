@@ -1,0 +1,34 @@
+{
+  "name": "commitguard",
+  "version": "1.0.0",
+  "description": "Blocks git commits that contain API keys, tokens, private keys or .env files. No dependencies, runs locally.",
+  "bin": {
+    "commitguard": "bin/commitguard.js"
+  },
+  "main": "lib/scan.js",
+  "files": [
+    "bin",
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/run-tests.js"
+  },
+  "keywords": [
+    "git", "pre-commit", "hook", "secrets", "credentials", "security",
+    "api-key", "dotenv", "secret-scanning", "leak", "devsecops"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProBurakElci/commitguard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ProBurakElci/commitguard/issues"
+  },
+  "homepage": "https://github.com/ProBurakElci/commitguard#readme"
+}

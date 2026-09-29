@@ -1,0 +1,2 @@
+# The test fixtures are fake credentials on purpose - that is the point of them.
+test/run-tests.js
