@@ -18,7 +18,9 @@ const { execFileSync } = require("child_process");
 const { scanStaged, scanFiles } = require("../lib/scan");
 const hook = require("../lib/hook");
 
-const NO_COLOR = process.env.NO_COLOR || !process.stdout.isTTY;
+// FORCE_COLOR keeps colours alive through a pipe, the way most CLI tools do.
+const FORCED = process.env.FORCE_COLOR && process.env.FORCE_COLOR !== "0";
+const NO_COLOR = process.env.NO_COLOR || (!FORCED && !process.stdout.isTTY);
 const c = (code, text) => (NO_COLOR ? text : "\u001b[" + code + "m" + text + "\u001b[0m");
 const red = (t) => c("31", t);
 const green = (t) => c("32", t);
